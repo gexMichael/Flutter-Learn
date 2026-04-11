@@ -43,7 +43,9 @@ class AuthApiService {
         return {'code': -1, 'msg': '伺服器響應錯誤: ${response.statusCode}'};
       }
     } catch (e) {
-      return {'code': -1, 'msg': '網路連線異常'};
+      // return {'code': -1, 'msg': '網路連線異常'};
+      print("DEBUG: API Error -> $e"); // 在 Console 看真正的錯誤類型
+      return {'code': -1, 'msg': '網路連線異常: $e'};
     }
   }
 }
